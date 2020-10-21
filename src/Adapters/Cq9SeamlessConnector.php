@@ -4,20 +4,20 @@ declare (strict_types = 1);
 
 namespace Ragebee\LaravelFishpond\Adapters;
 
-use FishpondServices\Cq9SlotSeamless\Cq9SlotSeamlessAdapter;
-use FishpondServices\Cq9SlotSeamless\Cq9SlotSeamlessClient;
 use GrahamCampbell\Manager\ConnectorInterface;
 use Illuminate\Support\Arr;
 use InvalidArgumentException;
+use Ragebee\Provider\Cq9Seamless\Cq9SeamlessAdapter;
+use Ragebee\Provider\Cq9Seamless\Cq9SeamlessClient;
 
-class Cq9SlotSeamlessConnector implements ConnectorInterface
+class Cq9SeamlessConnector implements ConnectorInterface
 {
     /**
      * Establish an adapter connection.
      *
      * @param string[] $config
      *
-     * @return \FishpondServices\Cq9SlotSeamless\Cq9SlotSeamlessAdapter
+     * @return \Ragebee\Provider\Cq9Seamless\Cq9SeamlessAdapter
      */
     public function connect(array $config)
     {
@@ -58,22 +58,22 @@ class Cq9SlotSeamlessConnector implements ConnectorInterface
      *
      * @param string[] $args
      *
-     * @return \FishpondServices\Cq9SlotSeamless\Cq9SlotSeamlessClient
+     * @return \Ragebee\Provider\Cq9Seamless\Cq9SeamlessClient
      */
     protected function getClient(array $args)
     {
-        return new Cq9SlotSeamlessClient($args);
+        return new Cq9SeamlessClient($args);
     }
 
     /**
      * Get the Dragoon Soft adapter.
      *
-     * @param \FishpondServices\Cq9SlotSeamless\Cq9SlotSeamlessClient $client
+     * @param \Ragebee\Provider\Cq9Seamless\Cq9SeamlessClient $client
      *
-     * @return \FishpondServices\Cq9SlotSeamless\Cq9SlotSeamlessAdapter
+     * @return \Ragebee\Provider\Cq9Seamless\Cq9SeamlessAdapter
      */
     protected function getAdapter(Cq9SlotSeamlessClient $client)
     {
-        return new Cq9SlotSeamlessAdapter($client);
+        return new Cq9SeamlessAdapter($client);
     }
 }

@@ -5,11 +5,7 @@ declare (strict_types = 1);
 namespace Ragebee\LaravelFishpond\Adapters;
 
 use InvalidArgumentException;
-use Ragebee\LaravelFishpond\Adapters\Cq9SlotSeamlessConnector;
-use Ragebee\LaravelFishpond\Adapters\DragoonSoftConnector;
-use Ragebee\LaravelFishpond\Adapters\IaEsConnector;
-use Ragebee\LaravelFishpond\Adapters\S182SbConnector;
-use Ragebee\LaravelFishpond\Adapters\SuperDiamondConnector;
+use Ragebee\LaravelFishpond\Adapters\Cq9SeamlessConnector;
 
 class ConnectionFactory
 {
@@ -41,20 +37,8 @@ class ConnectionFactory
         }
 
         switch ($config['driver']) {
-            case 'dragoonsoft':
-                return new DragoonSoftConnector();
-            case 'superdiamond':
-                return new SuperDiamondConnector();
-            case 's182sb':
-                return new S182SbConnector();
-            case 'iaes':
-                return new IaEsConnector();
-            case 'dsslotseamless':
-                return new DsSlotSeamlessConnector();
-            case 'cq9slotseamless':
-                return new Cq9SlotSeamlessConnector();
-            case 'nwbg':
-                return new NwBgConnector();
+            case 'cq9seamless':
+                return new Cq9SeamlessConnector();
         }
 
         throw new InvalidArgumentException("Unsupported driver [{$config['driver']}].");
