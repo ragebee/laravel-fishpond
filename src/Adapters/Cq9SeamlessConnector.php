@@ -72,7 +72,7 @@ class Cq9SeamlessConnector implements ConnectorInterface
      *
      * @return \Ragebee\Provider\Cq9Seamless\Cq9SeamlessAdapter
      */
-    protected function getAdapter(Cq9SlotSeamlessClient $client)
+    protected function getAdapter(Cq9SeamlessClient $client)
     {
         return new Cq9SeamlessAdapter($client);
     }
