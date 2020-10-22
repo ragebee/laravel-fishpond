@@ -12,10 +12,10 @@ return [
 
     'connections' => [
 
-        'cq9slotseamless' => [
-            'driver' => 'cq9slotseamless',
-            'api_url' => env('CQ9SLOTSEAMLESS_API_URL'),
-            'api_key' => env('CQ9SLOTSEAMLESS_API_KEY'),
+        'cq9seamless' => [
+            'driver' => 'cq9seamless',
+            'api_url' => env('CQ9SEAMLESS_API_URL'),
+            'api_key' => env('CQ9SEAMLESS_API_KEY'),
         ],
 
     ],
