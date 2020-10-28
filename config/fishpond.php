@@ -18,6 +18,13 @@ return [
             'api_key' => env('CQ9SEAMLESS_API_KEY'),
         ],
 
+        'jlseamless' => [
+            'driver' => 'jlseamless',
+            'api_url' => env('JLSEAMLESS_API_URL'),
+            'agent_id' => env('JLSEAMLESS_AGENT_ID'),
+            'agent_key' => env('JLSEAMLESS_AGENT_KEY'),
+        ],
+
     ],
 
 ];
