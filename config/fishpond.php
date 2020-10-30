@@ -25,6 +25,12 @@ return [
             'agent_key' => env('JLSEAMLESS_AGENT_KEY'),
         ],
 
+        'icgseamless' => [
+            'driver' => 'icgseamless',
+            'api_url' => env('ICGSEAMLESS_API_URL'),
+            'token' => env('ICGSEAMLESS_TOKEN'),
+        ],
+
     ],
 
 ];
