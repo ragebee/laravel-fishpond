@@ -29,6 +29,7 @@ return [
             'driver' => 'icgseamless',
             'api_url' => env('ICGSEAMLESS_API_URL'),
             'token' => env('ICGSEAMLESS_TOKEN'),
+            'secure_code' => env('ICGSEAMLESS_SECURE_CODE'),
         ],
 
     ],
