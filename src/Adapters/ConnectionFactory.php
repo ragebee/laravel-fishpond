@@ -6,6 +6,7 @@ namespace Ragebee\LaravelFishpond\Adapters;
 
 use InvalidArgumentException;
 use Ragebee\LaravelFishpond\Adapters\Cq9SeamlessConnector;
+use Ragebee\LaravelFishpond\Adapters\IcgSeamlessConnector;
 use Ragebee\LaravelFishpond\Adapters\JlSeamlessConnector;
 
 class ConnectionFactory
@@ -42,6 +43,8 @@ class ConnectionFactory
                 return new Cq9SeamlessConnector();
             case 'jlseamless':
                 return new JlSeamlessConnector();
+            case 'icgseamless':
+                return new IcgSeamlessConnector();
         }
 
         throw new InvalidArgumentException("Unsupported driver [{$config['driver']}].");
