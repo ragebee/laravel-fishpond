@@ -6,22 +6,21 @@ namespace Ragebee\LaravelFishpond;
 
 use Illuminate\Support\Arr;
 use Ragebee\Fishpond\Fishpond;
-use Ragebee\LaravelFishpond\Adapters\ConnectionFactory as AdapterFactory;
-use Ragebee\LaravelFishpond\FishpondManager;
+use Ragebee\LaravelFishpond\ConnectionFactory as AdapterFactory;
 
 class FishpondFactory
 {
     /**
      * The adapter factory instance.
      *
-     * @var \Ragebee\LaravelFishpond\Adapters\ConnectionFactory
+     * @var \Ragebee\LaravelFishpond\ConnectionFactory
      */
     protected $adapter;
 
     /**
      * Create a new filesystem factory instance.
      *
-     * @param \Ragebee\LaravelFishpond\Adapters\ConnectionFactory $adapter
+     * @param \Ragebee\LaravelFishpond\ConnectionFactory $adapter
      *
      * @return void
      */
@@ -33,12 +32,11 @@ class FishpondFactory
     /**
      * Make a new fishpond instance.
      *
-     * @param array                                      $config
-     * @param \Ragebee\LaravelFishpond\FishpondManager $manager
+     * @param array $confi
      *
      * @return \Ragebee\Fishpond\FishpondInterface
      */
-    public function make(array $config, FishpondManager $manager)
+    public function make(array $config)
     {
         $adapter = $this->createAdapter($config);
         $options = $this->getOptions($config);
@@ -79,7 +77,7 @@ class FishpondFactory
     /**
      * Get the adapter factory instance.
      *
-     * @return \Ragebee\LaravelFishpond\Adapters\ConnectionFactory
+     * @return \Ragebee\LaravelFishpond\ConnectionFactory
      */
     public function getAdapter()
     {
